@@ -113,12 +113,11 @@ Here's a step-by-step explanation of the code:
 
 Summary:
 The provided code defines a `locust` user class called `RandomHashMachineUser` that simulates users accessing the "Endpoint #2" of a web application using load testing. The users wait for 1 second between tasks. In the task, they send a GET request to "Endpoint #2," receive a JSON response containing a SHA-256 hash, and perform some analysis based on the last character of the hash. The analysis determines whether the hash passes certain conditions based on whether the last character is an even digit, an odd digit, or an alphabet.
-____________________________________________________________________________________________________________________________________________________________________
-
+__________________________________________________________________________________________________________________________________________________________________
 
 
 ![image](https://github.com/lookerOn/RedSquareBackEndTestQ2/assets/128567524/8c10b785-748e-46d2-887c-5c8aa3be94a9)
 
 ![image](https://github.com/lookerOn/RedSquareBackEndTestQ2/assets/128567524/cdbc5887-d8b7-4f8d-8a2b-26acf42a5525)
 
-
+![image](https://github.com/lookerOn/RedSquareBackEndTestQ2/assets/128567524/f321a07b-5e35-44a2-814c-c90ed5d645b4)
