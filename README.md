@@ -78,8 +78,43 @@ The provided code sets up an Express web application with two endpoints:
 
 Note: The `fetch` function used in "Endpoint #2" is a client-side function typically available in modern web browsers. If you want to run this code on the server (Node.js environment), you'll need to use a library like `node-fetch` to perform the GET request to "Endpoint #1" from "Endpoint #2".
 
+____________________________________________________________________________________________________________________________________________________________________
 
-!! Both Load tester using Locust Python (Same Code)
+**!! Both Load tester using Locust in Python Language**
+**_GENERAL CONCEPT_**
+
+The provided code appears to be using the `locust` library to simulate user behavior in load testing scenarios. `locust` is a popular Python library for load testing web applications.
+
+Here's a step-by-step explanation of the code:
+
+1. Importing necessary libraries:
+   - `from locust import HttpUser, task, constant`: This code imports the necessary classes and functions from the `locust` library. `HttpUser` is the base class for defining a user that interacts with the web application. `task` is a decorator used to define tasks that the user will perform during the load test. `constant` is a function that sets a constant wait time between tasks.
+
+2. Defining the `RandomHashMachineUser` class:
+   - `class RandomHashMachineUser(HttpUser):`: This class inherits from `HttpUser`, which means it will simulate users interacting with the web application.
+
+3. Setting the wait time:
+   - `wait_time = constant(1)`: This line sets a constant wait time of 1 second between tasks. In a load testing scenario, each user (or Virtual User, VU) created from this class will wait for 1 second before starting a new task.
+
+4. Defining the load test task:
+   - `@task`: This decorator marks the following function as a task that the user will perform during the load test. In this case, the task is named `test_endpoint2`.
+   - Inside the `test_endpoint2` task function:
+     - `response = self.client.get("/endpoint2")`: This line sends a GET request to the "/endpoint2" URL using the `self.client` object provided by `HttpUser`. It simulates a user accessing the "Endpoint #2" of the web application.
+     - `if response.status_code == 200:`: Checks if the response status code is 200, which means the request was successful.
+     - `data = response.json()`: Extracts the JSON data from the response.
+     - The code then proceeds to analyze the SHA-256 hash received from "Endpoint #2":
+       - It prints the example of the SHA-256 hash received.
+       - It extracts the last character from the hash.
+       - It checks if the last character is a digit or an alphabet.
+       - If the last character is a digit:
+         - It checks if the digit is even or odd.
+         - Prints whether it passes or not based on the last character being even or odd.
+       - If the last character is an alphabet:
+         - Prints that it does not pass.
+
+Summary:
+The provided code defines a `locust` user class called `RandomHashMachineUser` that simulates users accessing the "Endpoint #2" of a web application using load testing. The users wait for 1 second between tasks. In the task, they send a GET request to "Endpoint #2," receive a JSON response containing a SHA-256 hash, and perform some analysis based on the last character of the hash. The analysis determines whether the hash passes certain conditions based on whether the last character is an even digit, an odd digit, or an alphabet.
+____________________________________________________________________________________________________________________________________________________________________
 
 
 
