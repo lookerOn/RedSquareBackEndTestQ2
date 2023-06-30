@@ -39,8 +39,7 @@ The provided code defines a Flask web application with two endpoints:
 - `/endpoint2`: Sends a GET request to `/endpoint1` and returns the same hash value in a JSON response, but this endpoint keeps running indefinitely.
 
 Note: The usage of an infinite loop in `endpoint2` might not be desirable in a real-world scenario, as it can lead to server resource exhaustion and poor performance. Instead, you could consider implementing some form of request throttling or rate limiting to prevent excessive requests.
-____________________________________________________________________________________________________________________________________________________________________
-
+__________________________________________________________________________________________________________________________________________________________________
   
 :- NodeJs framework with JavaScript
 
@@ -81,7 +80,7 @@ Note: The `fetch` function used in "Endpoint #2" is a client-side function typic
 ____________________________________________________________________________________________________________________________________________________________________
 
 **!! Both Load tester using Locust in Python Language**
-**_GENERAL CONCEPT_**
+**(_GENERAL CONCEPT_)**
 
 The provided code appears to be using the `locust` library to simulate user behavior in load testing scenarios. `locust` is a popular Python library for load testing web applications.
 
