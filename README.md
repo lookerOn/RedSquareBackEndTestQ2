@@ -1,1 +1,0 @@
-# RedSquareBackEndTestQ2
