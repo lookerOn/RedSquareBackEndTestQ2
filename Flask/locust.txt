@@ -1,9 +1,0 @@
-temporary disable proxy
-
-python random_hash_machine.py
-
-locust -f locustfile.py --host=http://localhost:5000
-
-web browser : http://localhost:8089
-
-
